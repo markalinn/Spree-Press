@@ -1,0 +1,34 @@
+<div class='toolbar'>
+  <ul class='actions'>
+    <li>
+      <%= button_link_to t("new_press_item"), new_admin_press_item_url, :icon => 'add', :id => 'admin_new_press_item_link' %></p>
+    </li>
+  </ul>
+  <br class='clear' />
+</div>
+
+<h1><%= t("press_items") %></h1>
+
+<table class="index sortable" data-hook="press_items_table" data-sortable-link="<%= update_positions_admin_press_items_url(@press_item) %>">
+  <tr>
+    <th><%= t("thumbnail") %></th>
+    <th><%= t("name") %></th>
+  </tr>
+
+  <% @press_items.each do |press_item| %>
+    <tr id="<%= dom_id(press_item) %>">
+      <td>
+        <span class="handle"></span>
+        <%= image_tag(press_item.thumbnail.url(:mini)) %>
+      </td>
+      <td>
+        <%= press_item.name %>
+      </td>
+      <td class="actions">
+        <%= link_to_with_icon('edit', t("edit"), edit_admin_press_item_url(press_item), :class => 'edit') %>
+        &nbsp;
+        <%= link_to_delete press_item, {:url => admin_press_item_url(press_item) }%>
+      </td>
+    </tr>
+  <% end %>
+</table>
