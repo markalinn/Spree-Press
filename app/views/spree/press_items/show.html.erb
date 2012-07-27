@@ -1,4 +1,8 @@
 <%= image_tag @press_item.image.url %>
 <br/>
 <%= @press_item.description %>
-
+<% if @press_products.size > 0 %>
+<div id="press_products">
+	<%= render :partial => 'spree/shared/products', :locals => { :products => @press_products } %>
+</div>
+<% end %>

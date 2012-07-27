@@ -6,6 +6,7 @@ module Spree
     
     def show
       @press_item = PressItem.find(params[:id])
+      @press_products = @press_item.products.all
     end
   end
 end
