@@ -1,6 +1,6 @@
 module Spree
   class PressItem < ActiveRecord::Base
-    has_and_belongs_to_many :products
+    has_and_belongs_to_many :products, :uniq => true
     validates_presence_of :name #, :collection_group_id
     validates_uniqueness_of :name #, :scope => [:collection_group_id]
 

@@ -14,3 +14,7 @@
   <td><%= t("image") %>:</td>
   <td><%= f.file_field :image %></td>
 </tr>
+<tr>
+  <td><%= t("featured_products") %>:</td>
+  <td><%= f.collection_select :product_ids, Spree::Product.active, :id, :sku, {}, { :selected => @press_item.product_ids, :multiple => true } %></td>
+</tr>
