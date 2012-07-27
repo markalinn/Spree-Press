@@ -1,0 +1,8 @@
+<div id="press_items">
+<% @press_items.each do |press_item| %>
+	<div id="press_item">
+		<%= link_to(image_tag(press_item.thumbnail.url),press_item) %>
+		<h3><%= link_to(press_item.name,press_item) %></h3>
+	</div>
+<% end %>
+</div>

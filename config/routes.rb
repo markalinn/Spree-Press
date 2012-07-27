@@ -1,5 +1,5 @@
 Spree::Core::Engine.routes.draw do
-  get '/press', :to => 'press_items#index', :as => :press
+  resources :press_items
   
   namespace :admin do
     resources :press_items do
