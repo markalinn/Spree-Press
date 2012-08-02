@@ -1,7 +1,7 @@
 module Spree
   class PressItemsController < Spree::BaseController
     def index
-      @press_items = PressItem.all
+      @press_items = PressItem.page(params[:page]).per(15)
     end
     
     def show
