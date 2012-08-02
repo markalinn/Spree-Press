@@ -1,7 +1,7 @@
 <div id="press_items">
 <h3>Press</h3>
 <% @press_items.each do |press_item| %>
-	<div id="press_item">
+	<div id="index_press_index_item">
 		<%= link_to(image_tag(press_item.thumbnail.url),press_item) %><br/>
 		<%= link_to(press_item.name,press_item) %>
 	</div>
