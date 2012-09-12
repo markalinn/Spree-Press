@@ -18,5 +18,6 @@ module Spree
                       :url => '/spree/press_items/:id/image/:style/:basename.:extension',
                       :path => ':rails_root/public/spree/press_items/:id/image/:style/:basename.:extension'
 
+    attr_accessible :name, :description, :thumbnail, :image, :product_ids
   end
 end
