@@ -9,14 +9,14 @@
 
 <h1><%= t("press_items") %></h1>
 
-<table class="index sortable" data-hook="press_items_table" data-sortable-link="<%= update_positions_admin_press_items_url(@press_item) %>">
+<table class="index sortable" data-sortable-link="<%= update_positions_admin_press_items_url(@press_item) %>">
   <tr>
     <th><%= t("thumbnail") %></th>
     <th><%= t("name") %></th>
   </tr>
 
   <% @press_items.each do |press_item| %>
-    <tr id="<%= dom_id(press_item) %>">
+    <tr id="<%= spree_dom_id press_item %>">
       <td>
         <span class="handle"></span>
         <%= image_tag(press_item.thumbnail.url(:mini)) %>
